@@ -1,6 +1,5 @@
 import React from 'react';
 
 export default function Tour(props) {
-  console.log('props', props);
-  return <div>Tour</div>;
+  return <h1>{props.blok.name}</h1>;
 }

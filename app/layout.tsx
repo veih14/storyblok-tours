@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc';
 import { StoryblokProvider } from './components/StoryblokProvider';
+import Tour from './components/Tour';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -21,6 +22,10 @@ export const metadata: Metadata = {
 storyblokInit({
   accessToken: process.env.STORYBLOK_TOKEN,
   use: [apiPlugin],
+  components: {
+    tour: Tour,
+  },
+  enableFallbackComponent: true,
 });
 
 export default function RootLayout({

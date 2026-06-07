@@ -30,7 +30,6 @@ export default async function ToursPage({
 }) {
   const { slug } = await params;
   const story = await fetchTourPage(slug);
-  console.log('story', story);
 
   return <StoryblokStory story={story} />;
 }
