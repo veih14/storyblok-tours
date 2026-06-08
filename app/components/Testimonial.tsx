@@ -1,7 +1,9 @@
 import React from 'react';
+import type { StoryblokBlokProps, TestimonialBlok } from './storyblokTypes';
 
-export default function Testimonial(params) {
-  const { blok } = params;
+export default function Testimonial({
+  blok,
+}: StoryblokBlokProps<TestimonialBlok>) {
   return (
     <div className="bg-white p-8 rounded-sm shadow">
       <p className="text-xl leading-relaxed text-gray-700">{blok.comment}</p>

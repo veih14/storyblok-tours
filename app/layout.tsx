@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { apiPlugin, setComponents, storyblokInit } from '@storyblok/react/rsc';
 import { StoryblokProvider } from './components/StoryblokProvider';
@@ -11,16 +10,6 @@ import Feature from './components/Feature';
 import Testimonial from './components/Testimonial';
 import RecommendedTours from './components/RecommendedTours';
 import Link from 'next/link';
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -52,10 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <StoryblokProvider>
-      <html
-        lang="en"
-        className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-      >
+      <html lang="en" className="h-full antialiased">
         <body className="min-h-full flex flex-col bg-blue-50">
           <header>
             <nav className="container mx-auto px-4 w-full py-8 flex justify-between">

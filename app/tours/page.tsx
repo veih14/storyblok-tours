@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import { getStoryblokApi, StoryblokStory } from '@storyblok/react/rsc';
+import { notFound } from 'next/navigation';
 import RecommendedTour from '../components/RecommendedTour';
 
 const fetchToursPage = async () => {

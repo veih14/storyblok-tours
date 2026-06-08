@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import { getStoryblokApi, StoryblokStory } from '@storyblok/react/rsc';
+import { notFound } from 'next/navigation';
 
 const fetchHomePage = async () => {
   const client = getStoryblokApi();

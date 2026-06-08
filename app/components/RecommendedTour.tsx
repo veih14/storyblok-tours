@@ -1,18 +1,24 @@
 import React from 'react';
 import Link from 'next/link';
+import type { RecommendedTourStory } from './storyblokTypes';
 
-export default function RecommendedTour(props) {
+type RecommendedTourProps = {
+  story: RecommendedTourStory;
+};
+
+export default function RecommendedTour({ story }: RecommendedTourProps) {
+  const image = story.content.main_image?.filename;
+
   return (
     <div className="bg-white rounded-sm shadow">
-      <img
-        className="aspect-video object-cover w-full"
-        src={props.story.content.main_image.filename}
-      />
+      {image ? (
+        <img className="aspect-video object-cover w-full" src={image} alt="" />
+      ) : null}
       <div className="p-8">
         <div className="flex gap-4 justify-between text-lg font-bold">
-          <h3>{props.story.content.name}</h3>
+          <h3>{story.content.name}</h3>
           <p>
-            {Number(props.story.content.price).toLocaleString('en-US', {
+            {Number(story.content.price).toLocaleString('en-US', {
               style: 'currency',
               currency: 'TWD',
               minimumFractionDigits: 0,
@@ -20,11 +26,11 @@ export default function RecommendedTour(props) {
           </p>
         </div>
         <p className="text-gray-700 uppercase font-bold mt-2 text-sm tracking-wide">
-          {props.story.content.location}, Taiwan
+          {story.content.location}, Taiwan
         </p>
         <Link
           className="font-bold text-base mt-8 block underline"
-          href={`/${props.story.full_slug}`}
+          href={`/${story.full_slug}`}
         >
           View Tour
         </Link>

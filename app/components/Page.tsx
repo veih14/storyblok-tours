@@ -1,12 +1,12 @@
 import React from 'react';
 import { StoryblokServerComponent } from '@storyblok/react/rsc';
+import type { PageBlok, StoryblokBlokProps } from './storyblokTypes';
 
-export default async function Page(params) {
-  const { blok } = await params;
+export default async function Page({ blok }: StoryblokBlokProps<PageBlok>) {
   return (
     <main>
-      {blok.blocks.map((blok: any) => (
-        <StoryblokServerComponent blok={blok} key={blok._uid} />
+      {blok.blocks?.map((childBlok) => (
+        <StoryblokServerComponent blok={childBlok} key={childBlok._uid} />
       ))}
     </main>
   );

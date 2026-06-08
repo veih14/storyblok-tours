@@ -1,7 +1,7 @@
 import React from 'react';
+import type { HeroBlok, StoryblokBlokProps } from './storyblokTypes';
 
-export default function Hero(params) {
-  const { blok } = params;
+export default function Hero({ blok }: StoryblokBlokProps<HeroBlok>) {
   return (
     <section className="container mx-auto px-4 w-full pt-32 pb-16">
       <h1 className="text-center text-5xl md:text07xl font-bold">
