@@ -4,6 +4,12 @@ import './globals.css';
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc';
 import { StoryblokProvider } from './components/StoryblokProvider';
 import Tour from './components/Tour';
+import Page from './components/Page';
+import Hero from './components/Hero';
+import Grid from './components/Grid';
+import Feature from './components/Feature';
+import Testimonial from './components/Testimonial';
+import RecommendedTours from './components/RecommendedTours';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -24,6 +30,12 @@ storyblokInit({
   use: [apiPlugin],
   components: {
     tour: Tour,
+    page: Page,
+    hero: Hero,
+    grid: Grid,
+    feature: Feature,
+    testimonial: Testimonial,
+    recommended_tours: RecommendedTours,
   },
   enableFallbackComponent: true,
 });
