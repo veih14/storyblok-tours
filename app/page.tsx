@@ -6,6 +6,7 @@ const fetchHomePage = async () => {
   try {
     const response = await client.getStory(`home`, {
       version: 'draft',
+      resolve_relations: 'recommended_tours.tours',
     });
 
     return response.data.story;
