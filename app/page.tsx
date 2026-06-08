@@ -1,11 +1,12 @@
 import { getStoryblokApi, StoryblokStory } from '@storyblok/react/rsc';
 import { notFound } from 'next/navigation';
+import { storyblokVersion } from './storyblok';
 
 const fetchHomePage = async () => {
   const client = getStoryblokApi();
   try {
     const response = await client.getStory(`home`, {
-      version: 'draft',
+      version: storyblokVersion,
       resolve_relations: 'recommended_tours.tours',
     });
 

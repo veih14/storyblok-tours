@@ -1,12 +1,13 @@
 import { getStoryblokApi, StoryblokStory } from '@storyblok/react/rsc';
 import { notFound } from 'next/navigation';
+import { storyblokVersion } from '../storyblok';
 import RecommendedTour from '../components/RecommendedTour';
 
 const fetchToursPage = async () => {
   const client = getStoryblokApi();
   try {
     const response = await client.getStory(`tours`, {
-      version: 'draft',
+      version: storyblokVersion,
     });
 
     return response.data.story;
@@ -28,7 +29,7 @@ const fetchAllTours = async () => {
   const client = getStoryblokApi();
   const response = await client.getStories({
     content_type: 'tour',
-    version: 'draft',
+    version: storyblokVersion,
   });
 
   return response.data.stories;
