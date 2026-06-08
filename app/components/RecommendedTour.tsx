@@ -16,7 +16,7 @@ export default function RecommendedTour({ story }: RecommendedTourProps) {
       ) : null}
       <div className="p-8">
         <div className="flex gap-4 justify-between text-lg font-bold">
-          <h3>{story.content.name}</h3>
+          <h3>{story.content.name} stories</h3>
           <p>
             {Number(story.content.price).toLocaleString('en-US', {
               style: 'currency',
